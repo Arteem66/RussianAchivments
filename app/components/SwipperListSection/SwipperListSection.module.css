@@ -1,0 +1,54 @@
+.section-wrapper{
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.section-head{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: start;
+}
+
+.section-head-title{
+  font-size: 32px;
+}
+
+.slider{
+  padding: 30px 50px;
+  width: 100%;
+  position: relative;
+}
+
+.slider-wrapper{
+  padding-bottom: 30px;
+}
+
+.arrow-left{
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-75%) rotate(180deg);
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+}
+
+.arrow-right{
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-75%);
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+}
+
+.pagination{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}

@@ -1,0 +1,40 @@
+.slider-box{
+  background-color: #f3f3f3;
+  padding-top: 25px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 140px;
+}
+
+.invention-name{
+  padding: 0 15px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  text-align: center;
+}
+
+.invention-info{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #bef399;
+  border-radius:0 0 20px 20px;
+}
+
+.author-invention{
+  padding: 15px 25px;
+  border-radius: 0 20px 0 20px;
+  
+}
+
+.invention-date{
+  padding: 15px 25px;
+  border-radius: 20px 0px 20px 0px;
+  background-color: #bef399;
+}

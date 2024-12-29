@@ -1,0 +1,6 @@
+@font-face {
+  font-family: "Golos";
+  src:
+    local("Trickster"),
+    url("/my-app/public/fonts/GolosText-VariableFont_wght.ttf") format("ttf"),
+}

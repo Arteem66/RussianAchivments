@@ -1,95 +1,43 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Styles from './page.module.css'
+import { SwipperListSection } from './components/SwipperListSection/SwipperListSecton'
+import { useGetDataByCategory, useGetDataByYear } from './api/api-config'
+import { data } from './data/data'
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+	const yearList = useGetDataByYear(data)
+	const physicsCategory = useGetDataByCategory(data, 'Физика')
+	const сhemistryCategory = useGetDataByCategory(data, 'Химия')
+	const computerCategory = useGetDataByCategory(data, 'Компьютер')
+	const medicineCategory = useGetDataByCategory(data, 'Медицина')
+	return (
+		<main className={Styles['main']}>
+			<div className='container'>
+				<SwipperListSection
+					title='Открытия по годам'
+					id='yearList'
+					data={yearList}
+				/>
+				<SwipperListSection
+					title='Открытия в физике'
+					id='Physics'
+					data={physicsCategory}
+				/>
+				<SwipperListSection
+					title='Открытия в химии'
+					id='Химия'
+					data={сhemistryCategory}
+				/>
+				<SwipperListSection
+					title='Компьютерные открытия'
+					id='Компютер'
+					data={computerCategory}
+				/>
+				<SwipperListSection
+					title='Открытия в медицине'
+					id='Медицина'
+					data={medicineCategory}
+				/>
+			</div>
+		</main>
+	)
 }
