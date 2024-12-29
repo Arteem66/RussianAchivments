@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Styles from './Footer.module.css'
 
 export const Footer = () => {
@@ -6,7 +7,7 @@ export const Footer = () => {
 			<div className={Styles['container']}>
 				<div className={Styles['footer-wrapper']}>
 					<h2 className={Styles['footer-logo']}>
-						<a href='#'>Российские изобретения</a>
+						<Link href={`/`}>Российские изобретения</Link>
 					</h2>
 				</div>
 			</div>
