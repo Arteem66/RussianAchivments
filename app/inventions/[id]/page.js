@@ -51,12 +51,16 @@ export default function InventionPage(props) {
 							<h1 className={Styles['info-title']}>{invention.invention}</h1>
 							<p className={Styles['brief-info']}>{invention.brief}</p>
 							<div className={Styles['info-row']}>
-								<p className={Styles['inventor']}>{invention.name}</p>
+								<p className={Styles['inventor']}>
+									{invention.name === 'Unknown'
+										? 'Изобретатель не известен'
+										: invention.name}
+								</p>
 								<p className={Styles['info-date']}>{invention.year}</p>
 							</div>
 						</div>
 						<Link href='/' className={Styles['arrow-back']}>
-							<img src='/img/arrow.png'/>
+							<img src='/img/arrow.png' />
 						</Link>
 					</div>
 				</div>
