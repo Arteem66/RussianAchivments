@@ -4,7 +4,7 @@
 
 .invention-wrapper{
   padding-top: 106px;
-  height: 100%;
+  height: calc(100%-50px);
 }
 
 .invention-box{
